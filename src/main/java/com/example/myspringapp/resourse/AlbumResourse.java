@@ -3,9 +3,7 @@ package com.example.myspringapp.resourse;
 import com.example.myspringapp.model.Album;
 import com.example.myspringapp.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -17,5 +15,10 @@ public class AlbumResourse {
     @GetMapping("/album")
     public Album getAlbum(){
         return albumService.getAlbum();
+    }
+
+    @PostMapping("/album")
+    public Album saveAlbum(@RequestBody Album album){
+        return albumService.saveAlbum(album);
     }
 }
