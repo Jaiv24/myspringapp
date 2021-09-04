@@ -33,4 +33,15 @@ public class AlbumResourse {
     public Album getAlbumById(@PathVariable("albumId") int albumId){
         return albumService.getAlbumById(albumId);
     }
+
+    @PutMapping("/album/{albumId}")
+    public Album updateAlbum(@PathVariable("albumId") int albumId, @RequestBody Album album){
+        return albumService.updateAlbum(albumId, album);
+    }
+
+    @DeleteMapping("/album")
+        public Album deleteAlbum(@RequestParam(name = "albumId") int albumId){
+            return albumService.deleteAlbum(albumId);
+        }
+
 }

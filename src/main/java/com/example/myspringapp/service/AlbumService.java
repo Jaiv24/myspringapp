@@ -24,4 +24,12 @@ public class AlbumService {
     public Album getAlbumById(int albumId) {
         return albumRepository.getAlbumById(albumId);
     }
+
+    public Album updateAlbum(int albumId, Album album) {
+        return albumRepository.updateAlbum(albumId, album);
+    }
+
+    public Album deleteAlbum(int albumId) {
+        return albumRepository.deleteAlbum(albumId);
+    }
 }
