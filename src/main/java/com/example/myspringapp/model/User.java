@@ -1,20 +1,23 @@
 package com.example.myspringapp.model;
 
+import org.springframework.data.annotation.Id;
+
 public class User {
 
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    private int userId;
+    @Id
+    private String id;
     private String name;
     private String email;
     private String profilePicUrl;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public User(String name, String email, String profilePicUrl) {
         this.name = name;

@@ -1,7 +1,11 @@
 package com.example.myspringapp.model;
 
+import org.springframework.data.annotation.Id;
+
 public class Album {
-    private int albumId;
+
+    @Id
+    private String albumId;
     private String name;
     private String description;
     private String coverPicUrl;
@@ -13,11 +17,11 @@ public class Album {
         this.coverPicUrl = coverPicUrl;
     }
 
-    public int getAlbumId() {
+    public String getAlbumId() {
         return albumId;
     }
 
-    public void setAlbumId(int albumId) {
+    public void setAlbumId(String albumId) {
         this.albumId = albumId;
     }
 
