@@ -54,6 +54,6 @@ public class AlbumRepository {
                 return deletedAlbum;
             }
         }
-        return deletedAlbum;
+        return null;
     }
 }

@@ -1,15 +1,24 @@
 package com.example.myspringapp.model;
 
 public class User {
+
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    private int userId;
     private String name;
-    private String address;
-    private int age;
+    private String email;
     private String profilePicUrl;
 
-    public User(String name, String address, int age, String profilePicUrl) {
+    public User(String name, String email, String profilePicUrl) {
         this.name = name;
-        this.address = address;
-        this.age = age;
+        this.email = email;
         this.profilePicUrl = profilePicUrl;
     }
 
@@ -21,20 +30,12 @@ public class User {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getProfilePicUrl() {
