@@ -5,6 +5,8 @@ import com.example.myspringapp.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class AlbumResourse {
@@ -20,5 +22,15 @@ public class AlbumResourse {
     @PostMapping("/album")
     public Album saveAlbum(@RequestBody Album album){
         return albumService.saveAlbum(album);
+    }
+
+    @GetMapping("/allAlbums")
+    public List<Album> getAllAlbums(){
+        return albumService.getAllAlbums();
+    }
+
+    @GetMapping("/album/{albumId}")
+    public Album getAlbumById(@PathVariable("albumId") int albumId){
+        return albumService.getAlbumById(albumId);
     }
 }

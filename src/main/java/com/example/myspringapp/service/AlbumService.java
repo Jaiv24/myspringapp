@@ -5,6 +5,8 @@ import com.example.myspringapp.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AlbumService {
     @Autowired
@@ -13,5 +15,13 @@ public class AlbumService {
 
     public Album saveAlbum(Album album) {
         return albumRepository.saveAlbum(album);
+    }
+
+    public List<Album> getAllAlbums() {
+        return albumRepository.getAllAlbum();
+    }
+
+    public Album getAlbumById(int albumId) {
+        return albumRepository.getAlbumById(albumId);
     }
 }

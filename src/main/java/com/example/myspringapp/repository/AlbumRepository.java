@@ -9,10 +9,27 @@ import java.util.List;
 @Repository
 public class AlbumRepository {
     List<Album> albums = new ArrayList<>();
-    public Album getAlbum() { return new Album(458, "Rav4", "Suv ...", "Rav4.jpg");}
+    public Album getAlbum() {
+        return new Album("Rav4", "Suv ...", "Rav4.jpg");
+    }
 
     public Album saveAlbum(Album album) {
+        album.setAlbumId(albums.size() + 1);
         albums.add(album);
         return album;
+    }
+
+    public List<Album> getAllAlbum() {
+        return albums;
+    }
+
+    public Album getAlbumById(int albumId) {
+
+        for(Album album: albums){
+            if(album.getAlbumId() == albumId){
+                return album;
+            }
+        }
+        return null;
     }
 }
