@@ -24,11 +24,6 @@ public class AlbumResourse {
         return albumService.getAllAlbums();
     }
 
-//    @GetMapping("/album/{albumId}")
-//    public Album getAlbumById(@PathVariable("albumId") int albumId){
-//        return albumService.getAlbumById(albumId);
-//    }
-
     @PutMapping
     public Album updateAlbum(@RequestBody Album album){
         return albumService.updateAlbum(album);

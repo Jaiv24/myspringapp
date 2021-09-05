@@ -1,20 +1,34 @@
 package com.example.myspringapp.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Album {
 
     @Id
     private String albumId;
     private String name;
-    private String description;
+    private String createdBy;
     private String coverPicUrl;
+    private LocalDate dateCreated;
 
-    public Album( String name, String description, String coverPicUrl) {
+    public LocalDate getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(LocalDate dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Album(String name, String createdBy, String coverPicUrl, LocalDate dateCreated) {
 
         this.name = name;
-        this.description = description;
+        this.createdBy = createdBy;
         this.coverPicUrl = coverPicUrl;
+        this.dateCreated = dateCreated;
     }
 
     public String getAlbumId() {
@@ -33,12 +47,12 @@ public class Album {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
     public String getCoverPicUrl() {
