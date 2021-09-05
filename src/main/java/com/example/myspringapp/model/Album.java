@@ -1,5 +1,7 @@
 package com.example.myspringapp.model;
 
+import com.example.myspringapp.validation.ValidateEmail;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -10,7 +12,9 @@ public class Album {
 
     @Id
     private String albumId;
+    @Length(max = 10)
     private String name;
+    @ValidateEmail
     private String createdBy;
     private String coverPicUrl;
     private LocalDate dateCreated;

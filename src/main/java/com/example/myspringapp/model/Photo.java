@@ -1,5 +1,6 @@
 package com.example.myspringapp.model;
 
+import com.example.myspringapp.validation.ValidateEmail;
 import org.springframework.data.mongodb.core.index.Indexed;
 
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ public class Photo {
     @Indexed
     private String albumId;
     private String photoUrl;
+    @ValidateEmail
     private String createdBy;
     private LocalDate dateCreated;
 

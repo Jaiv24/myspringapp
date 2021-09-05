@@ -1,14 +1,19 @@
 package com.example.myspringapp.model;
 
+import com.example.myspringapp.validation.ValidateEmail;
 import org.springframework.data.mongodb.core.index.Indexed;
 
+import javax.validation.constraints.Min;
 import java.time.LocalDate;
 
 public class Comment {
     private String id;
     @Indexed
     private String photoId;
+
+    @Min(value = 5)
     private String message;
+    @ValidateEmail
     private String createdBy;
     private LocalDate dateCreated;
 

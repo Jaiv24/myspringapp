@@ -1,14 +1,21 @@
 package com.example.myspringapp.model;
 
+import com.example.myspringapp.validation.ValidateEmail;
 import org.springframework.data.annotation.Id;
+
+import javax.validation.constraints.*;
 
 public class User {
 
 
     @Id
     private String id;
+    @NotEmpty
     private String name;
+    @ValidateEmail(customRegex = "^[a-zA-Z0-9._]+@{1}[a-zA-Z0-9_]+[.]{1}[a-zA-Z0-9_]+[a-zA-Z0-9._]+$")
+    @NotEmpty(message = "email Id cannot be null")
     private String email;
+    @NotEmpty(message = "Profile Picture Id cannot be null")
     private String profilePicUrl;
 
     public String getId() {
