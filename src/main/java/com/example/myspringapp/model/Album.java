@@ -3,11 +3,8 @@ package com.example.myspringapp.model;
 import com.example.myspringapp.validation.ValidateEmail;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDate;
-import java.util.Date;
-
 public class Album {
 
     @Id
