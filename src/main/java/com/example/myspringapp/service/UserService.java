@@ -22,12 +22,16 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void deleteUser(String userId) {
+    public String deleteUser(String userId) {
         userRepository.deleteById(userId);
+        return "User Deleted";
     }
 
     public List<User> getUserByName(String name){
         return userRepository.findUserByName(name);
     }
 
+    public User getUserById(String userId) {
+        return userRepository.findById(userId).get();
+    }
 }

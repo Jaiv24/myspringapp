@@ -26,10 +26,14 @@ public class AlbumService {
         return albumRepository.save(album);
     }
 
-    public void deleteAlbum(String albumId) {
+    public String deleteAlbum(String albumId) {
         albumRepository.deleteById(albumId);
+        return albumId;
     }
 
+    public Album getAlbumById(String albumId) {
+        return albumRepository.findById(albumId).get();
+    }
 
 }
 

@@ -25,7 +25,12 @@ public class PhotoService {
         return photoRepository.save(photo);
     }
 
-    public void deletePhoto(String photoId) {
+    public String deletePhoto(String photoId) {
         photoRepository.deleteById(photoId);
+        return photoId;
+    }
+
+    public Photo getPhotoById(String photoId) {
+        return photoRepository.findById(photoId).get();
     }
 }
