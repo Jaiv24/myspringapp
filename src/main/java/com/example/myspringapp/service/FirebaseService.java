@@ -21,7 +21,16 @@ public class FirebaseService {
     private FirebaseConfig firebaseConfig;
 
     public FirebaseUser authenticate(String idToken) throws IOException, FirebaseAuthException {
-
+        //        FirebaseApp firebaseApp = null;
+//        List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+//        if(firebaseApps!=null && !firebaseApps.isEmpty()){
+//            for(FirebaseApp app : firebaseApps){
+//                if(app.getName().equals(FirebaseApp.DEFAULT_APP_NAME))
+//                    firebaseApp = app;
+//            }
+//        }
+//        else
+//            firebaseApp = FirebaseApp.initializeApp(options);
         FirebaseApp firebaseApp = firebaseConfig.initializeFirebase();
         FirebaseToken firebaseToken = FirebaseAuth.getInstance(firebaseApp).verifyIdToken(idToken);
 
@@ -29,7 +38,6 @@ public class FirebaseService {
         String name = firebaseToken.getName(); //Usually this is NULL, since we did not get this during SignUp
         String email = firebaseToken.getEmail(); // This is unique and is a mandatory for Google Firebase IAM
 
-//        System.out.println("*** UID = "+uid+" Name = "+name+" eMail = "+email);
         return new FirebaseUser(uid,name,email);
     }
 }
